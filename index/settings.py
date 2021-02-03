@@ -13,7 +13,7 @@ SECRET_KEY = 'vl1=x8=#fb80uk(o8#f183)x6$$5ck=51ki=pa5$*8(#=73o0e'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1']
+ALLOWED_HOSTS = ['127.0.0.1','hunt-anime.herokuapp.com']
 
 
 # Application definition
