@@ -1,0 +1,80 @@
+{% block content %}
+{% load static %}
+{% static "img" as baseUrl %}
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+		<title>HuntAnime</title>
+	</head>
+	<body>
+		<div class="allcontent">
+			<ul id="navigation">
+				<li><a href="register">Register</a></li>
+				<li><a href="signin">LogIn</a></li>
+				<li><a href="">About</a></li>
+				<li><a href="/">Home</a></li>
+				<ul class="logo1">
+					<li><img class="logo"src="{% static 'Image/MainLogo.png' %}"/></li>
+				</ul>
+			</ul>
+			<div class="center">
+				<br><br>
+				<h1 class="text">CREATE ACCOUNT</h1>
+				<div class="message">
+					{%for message in messages %}
+					<h3>{{message}}</h3>
+					{% endfor %}
+				</div>
+				<form action="register" method="post">
+					{% csrf_token %}
+					<input class="searchfield shfield" type="text" placeholder="FIRST NAME" name="first_name"/>
+					<input class="searchfield shfield" type="text" placeholder="LAST NAME" name="last_name"/><br>
+					<input class="searchfield" type="text" placeholder="USER NAME" name="user_name"/><br>
+					<input class="searchfield" type="email" placeholder="EMAIL" name="email"><br>
+					<input class="searchfield" type="password" placeholder="PASSWORD" name="password1"/><br>
+					<input class="searchfield" type="password" placeholder="CONFIRM PASSWORD" name="password2"/><br><br><br>
+					<div class="btnn">
+						<input class="searchBtn actBtn" type="submit" value="CREATE ACCOUNT"/>
+					</div>
+				</form>
+
+			</div>
+			<div class="bgcontent">
+				<div class="align">
+				<center>
+				<footer>
+					<div class="row1">
+						<h3 class="bt">Recomanded</h3>
+						<a href="">Top Animes</a><br><br>
+						<a href="">Top Characters</a><br><br>
+						<a href="">Main characters</a><br><br>
+						<a href="">long serious anime</a><br><br>
+					</div>
+					<div class="row2">
+						<h3 class="bt">Navigation</h3>
+						<a href="/">Home</a><br><br>
+						<a href="">About us</a><br><br>
+						<a href="signin">Login</a><br><br>
+						<a href="">Register</a><br><br>
+					</div>
+					<div class="row3">
+						<h3 class="bt">More</h3>
+						<a href=""><img src="Mainlogo.png">facebook</a><br><br>
+						<a href=""><img src="Mainlogo.png">youtube</a><br><br>
+						<a href=""><img src="Mainlogo.png">@hunt10anime</a><br><br>
+						<a href=""><img src="Mainlogo.png">0937668482</a><br><br>
+					</div>
+				</footer>
+				<hr>
+				<h2 class="bottomtext">&copy 2020|2013 Developed by Natnale </h2>
+				</center>
+				</div>
+			</div>
+		</div>
+
+	</body>
+</html>
+
+{% endblock %}
+
+				

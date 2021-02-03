@@ -1,0 +1,423 @@
+body{
+	background-color: 373737;
+}
+
+
+/*paragraph description property*/
+
+.description {
+	color:gray;
+	font-size:20px;
+	text-indent:30px;
+	margin-top: -10px;
+}
+
+.image{
+	height:auto;
+}
+
+/*all the content inside the page is included*/
+
+
+.allcontent{
+	background-color:272727;
+	width:70%;
+	min-width: 78%;
+	margin:auto;
+	margin-top:-7px;
+}
+
+
+/*navigation*/
+#navigation{
+	position:fixed;
+	opacity:0.8;
+	width:77%;
+	z-index: 1;
+}
+@media(max-width:800px){
+	#navigation{
+		width:76%;
+	}
+}
+ul {
+	list-style-type:none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: 171717;
+}
+li {
+	float: right;
+
+}
+li a{
+	padding-top:6px;
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+li a:hover{
+	background-color: #4CAF50;
+	padding-bottom:20px;
+}
+li a:active{
+	background-color: #4CAF50;
+}
+
+/*Nav Main Logo*/
+
+.logo1 li{
+	float: left;
+}
+.logo{
+	padding-top:5px;
+	width:150px;
+}
+
+
+/*time counter on the bottom*/
+
+
+div .counter{
+	bottom: -20;
+	right:auto;
+	position: fixed;
+	width:77%;
+	height:2px;
+	min-width: 70%;
+	margin-right: 20px;
+	border: #73AD21;
+	color: white;
+	text-align: right;
+	background-color: 171717;
+	padding-top:0px;
+	padding-right:1px;
+	padding-bottom:20px;
+}
+
+/*form content*/
+
+form{
+	text-align:center;
+	margin-bottom:50px;
+}
+.searchfield{
+	margin-top:30px;
+	width:32%;
+	height:40px;
+	color:gray;
+	font-size:95%;
+	background-color:373737;
+	border-color:white;
+	border-radius:5px;
+}
+.searchBtn{
+	width:100px;
+	height:40px;
+	color:white;
+	background-color: 222222;
+	border-radius:6px;
+}
+.actBtn{
+	width:150px;
+}
+
+.content{
+	padding: 0 21px;
+}
+@media(max-width:600){
+	.image{
+		height:auto;
+	}
+	.description {
+		font-size:17px;
+		text-indent:30px;
+	}
+	.title{
+		font-size:25px;
+	}
+}
+.center{
+	width:50%;
+	margin:auto;
+}
+.center .searchfield{
+	width:110%;
+}
+.text{
+	color:lightgray;
+}
+.btn{
+	margin-left:-80%;
+}
+.btnn{
+	margin-left:-70%;
+}
+.logo2{
+	width:150px;
+	height:150px;
+	border-radius:50%;
+	align-content: center;
+}
+.centered{
+	margin-left:40%;
+}
+.row1, .row2, .row3{
+    display:inline-block;
+    color:darkgray;
+    width:30%;
+}
+.fb{
+	display:inline-flex;
+	margin-bottom:15px;
+}
+.yt{
+	display:inline-flex;
+	margin-bottom:15px;
+}
+.tg{
+	display:inline-flex;
+	margin-bottom:15px;
+}
+
+table{
+	margin:0px;
+	padding:0px;
+}
+.bottomtext{
+	color:lightgray;
+	padding-bottom:10px;
+	margin-bottom:-10px;
+}
+.bgcontent{
+	background-color:171717;
+	margin-top:-8px;
+	height:auto;
+}
+.align{
+	width:100%;
+	margin:auto;
+}
+.bt{
+    color:orange;
+}
+.row1, .row2, .row3 img{
+	border-radius:50%;
+}
+footer a{
+    color:darkgray;
+    text-decoration:none;
+    text-transform:capitalize;
+}
+footer a:hover{
+    color: yellow;
+    text-decoration:underline;
+}
+
+.tooltip{
+	position:relative;
+	display:inline-block;
+	border-bottom:1px dotted black;
+}
+.tooltip .tooltiptext{
+	visibility:hidden;
+	width:250px;
+	bottom:100%;
+	left:50%;
+	margin-left:-60px;
+	background-color:black;
+	color:#fff;
+	text-align:center;
+	padding:5px 0;
+	border-radius:6px;
+	position: absolute;
+	z-index: 1;
+	text-transform:capitalize;
+	opacity:0.6;
+}
+.tooltip .tooltiptext::after{
+	content: " ";
+	position: absolute;
+	top:100%;
+	left:50%;
+	margin-left: -5px;
+	border-width:5px;
+	border-style:solid;
+	border-color:black transparent transparent transparent;
+}
+.tooltip:hover .tooltiptext{
+	visibility:visible;
+}
+@media(max-width:600px){
+	.tooltip .tooltiptext{
+		width:200px;
+	}
+}
+.shfield{
+	width:25%;
+}
+.bcontent{
+	background-color:171717;
+	margin-top:130px;
+	height:auto;
+}
+.moree{
+	display:inline-flex;
+	flex-wrap:wrap;
+	width:90%;
+	margin:0 5%;
+	margin-top:40px;
+}
+.more{
+	width:206%;
+	height:100%;
+
+}
+.nav{
+    margin-top:27px;
+    margin-left:30px;
+}
+.nav a{
+    color:gray;
+    font-size:18px;
+    margin:0 10px;
+    text-decoration:none;
+    text-transform:capitalize
+}
+.nav a:hover{
+    color:yellow;
+    font-size:25px;
+    text-decoration:underline;
+}
+.more img{
+}
+.txt{
+	margin-left: 30px;
+}
+.dec a{
+    color:green;
+    text-decoration:none;
+    margin-bottom:-10px;
+}
+.dec{
+	margin-top:-60px;
+}
+.name{
+    border:none;
+    background-color:272727;
+    color:green;
+    font-size:2em;
+    font-weight:20px;
+    margin-top:20px;
+    margin-bottom:-30px;
+}
+.name:hover{
+    color:yellow;
+}
+.chbox{
+margin-right:70%;
+}
+.message{
+background-color:353535;
+color:darkgray;
+width:500px;
+border-radius:10px;
+padding-left:30px;
+padding-top:2px;
+padding-bottom:2px;
+}
+.user{
+    width = 50px;
+    height = 50px;
+    border-radius:50%
+}
+.count{
+    background:red;
+    color:white;
+    padding:2px;
+    border-radius:10px;
+    margin-left:-13px;
+    margin-top:2px;
+    z-index:1;
+}
+.bbt{
+    background-color:171717;
+    color:gray;
+    padding:6px;
+    border-radius:10px;
+    margin-left:108%;
+    margin-top:20px;
+    width:130px;
+}
+
+
+
+
+
+
+.container{
+	margin:25px auto 0;
+	display:flex;
+	flex-direction:row;
+	flex-wrap: wrap;
+	font-family: sans-serif;
+
+}
+.container .box{
+	position:relative;
+	width:219px;
+	height:300px;
+	margin:10px;
+	box-sizing:border-box;
+	display:inline-block;
+}
+.container .box .imgBox{
+	position:relative;
+	overflow: hidden;
+}
+.container .box .imgBox img{
+	max-width:100%;
+	height:300px;
+	transition:transform 2s;
+}
+.container .box:hover .imgBox img{
+	transform: scale(1.2);
+}
+.container .box .details{
+	position:absolute;
+	top:10px;
+	left:10px;
+	bottom: 10px;
+	right:10px;
+	background: rgba(0,0,0,.8);
+	transform:scaleY(0);
+	transition:transform: .5s;
+}
+.container .box:hover .details{
+	transform: scaleY(1);
+}
+.container .box .details .content{
+	position:absolute;
+	top:50%;
+	transform:translateY(-50%);
+	text-align:center;
+	padding:15px;
+	color:#fff;
+}
+.container .box .details .content h2{
+	margin:-10px;
+	padding:0;
+	font-size: 20px;
+	color: #ff0;
+}
+.container .box .details .content p{
+	margin:10px 0 0;
+	padding:0;
+	font-size:13px;
+}
+.hidden{
+    display:none;
+}

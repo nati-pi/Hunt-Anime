@@ -1,0 +1,132 @@
+{% block content %}
+{% load static %}
+{% static "img" as baseUrl %}
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<title>HuntAnime</title>
+</head>
+<body>
+	<div class="allcontent">
+		<div id="navigation">
+			<ul>
+				{% if user.is_authenticated%}
+					<li><p class="count">0</p></li>
+					<li><img src="{% static 'Image/avatarlogo.png' %}" class="user"  alt="{{user.first_name}}" width='50px' height='45px'/></li>
+					<li><a href="accounts/logout">Logout</a></li>
+				{% else %}
+				<li><a href="accounts/register">Register</a></li>
+				<li><a href="accounts/signin">LogIn</a></li>
+				{% endif %}
+				<li><a href="">About</a></li>
+				<li><a href="/">Home</a></li>
+				<ul class="logo1">
+					<li><img class="logo"src="{% static 'Image/MainLogo.png' %}"/></li>
+				</ul>
+			</ul>
+		</div>
+		<br><br>
+		<div class="nav">
+			<a href="#characters">characters</a>
+			<a href="#pictures">pictures</a>
+		</div>
+		{% for main in main %}
+		<p class="hidden">{{main.title}}</p>
+		<div class="moree">
+			<table>
+				<tr>
+					<td>
+						<div class="more">
+							<img src="{{main.mainImg.url}}" width="300px" height="400px">
+						</div>
+					</td>
+					<td>
+						<div class="txt">
+							<h1 style="color:green;">{{main.Name}}</h1>
+							<p class="description">{{main.moreDesc}}</p>
+						</div>
+					</td>
+				</tr>
+			</table>
+		</div>
+		{% endfor %}
+		<hr>
+		<h1 style="color:green" id="characters">CHARACTERS</h1>
+		<div class="container">
+			{% for character in character %}
+			<p class="hidden">{{character.title}}</p>
+			<div class="box">
+				<div class="imgBox">
+					<img src="{{character.ChrImage.url}}" alt="{{character.title}}">
+				</div>
+				<div class="details">
+					<div class="content">
+						<h2>{{character.name}}</h2>
+						<p>{{character.description}}</p>
+					</div>
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+		<hr>
+		<h1 style="color:green;" id="pictures">PICTURES</h1>
+		<div class="container">
+			{% for picture in picture %}
+			<p class="hidden">{{picture.title}}</p>
+			<div class="box">
+				<div class="imgBox">
+					<img src="{{picture.Pic.url}}" alt="{{picture.title}}">
+				</div>
+			</div>
+			{% endfor %}
+		</div>
+
+		<div class="bgcontent">
+			<div class="align">
+				<center>
+					<footer>
+						<div class="row1">
+							<h3 class="bt">Recomanded</h3>
+							<a href="">Anime Quotes</a><br><br>
+							<a href="">Anime memes</a><br><br>
+							<a href="">Best Animes</a><br><br>
+							<a href="">long serious anime</a><br><br>
+						</div>
+						<div class="row2">
+							<h3 class="bt">Navigation</h3>
+							<a href="/">Home</a><br><br>
+							<a href="">About us</a><br><br>
+							{% if user.is_authenticated%}
+
+					<a href="accounts/logout">Logout</a>
+				{% else %}
+				<a href="accounts/signin">LogIn</a>
+				<a href="accounts/register">Register</a>
+				{% endif %}
+						</div>
+						<div class="row3">
+							<h3 class="bt">Contact us</h3>
+							<div class="fb">
+								<img src="{% static 'Image/facebook.png' %}"width="30px" height="30px">
+								facebook
+							</div>
+							<div class="yt">
+								<img src="{% static 'Image/youtube.png' %}"width="30px" height="30px">
+								youtube
+							</div>
+							<div class="tg">
+								<img src="{% static 'Image/telegram.png' %}" width="30px" height="30px">
+								@hunt10anime
+							</div>
+						</div>
+					</footer>
+					<hr>
+					<h3 class="bottomtext">&copy 2020|2013 Developed by Natnale </h3>
+				</center>
+			</div>
+		</div>		
+	</div>
+</body>
+</html>
+
+{% endblock %}

@@ -1,0 +1,109 @@
+{% block content %}
+{% load static %}
+{% static "img" as baseUrl %}
+<html>
+<head>
+	<link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+	<title>HuntAnime</title>
+</head>
+<body>
+	<div class="allcontent">
+		<div id="navigation">
+			<ul>
+				{% if user.is_authenticated%}
+					<li><p class="count">0</p></li>
+					<li><img src="{% static 'Image/avatarlogo.png' %}" class="user"  alt="{{user.first_name}}" width='50px' height='45px'/></li>
+					<li><a href="accounts/logout">Logout</a></li>
+				{% else %}
+				<li><a href="accounts/register">Register</a></li>
+				<li><a href="accounts/signin">LogIn</a></li>
+				{% endif %}
+				<li><a href="">About</a></li>
+				<li><a href="/">Home</a></li>
+				<ul class="logo1">
+					<li><img class="logo"src="{% static 'Image/MainLogo.png' %}"/></li>
+				</ul>
+			</ul>
+		</div>
+		<br><br>
+		<form method="GET" action=".">
+			<input class="searchfield" type="search" placeholder="Quick Search" name="content"/>
+			<input class="searchBtn" type="submit" value="Search"/>
+		</form>
+
+		{% for files in queryset %}
+	
+			<img class="image" src="{{files.Image.url}}" width="100%"/>
+			<div class="content">
+				<div class="tooltip">
+					{% if user.is_authenticated %}
+					<button class="bbt" onclick="count()">+ Add to watch list</button>
+					<form class="dec" method="get" action="more">
+						<input class="hidden" type="search" value="{{files.Name}}" name="title"/>
+						<input class="name" type="submit" value="{{files.Name}}">
+					</form>
+					{% else %}
+					<h1 class="title tooltip" style="color:green">{{files.Name}}</h1>
+					<span class="tooltiptext">Login for free to browse more about {{files.Name}}</span>
+					{% endif %}
+				</div>
+				<p class="description">{{files.Description}}</p>
+				<h4 style="text-align:right; color:orange">Season: {{files.Season}} , TotalEpisode: {{files.Episode}}</h4>
+				<hr>
+			</div>
+		{% endfor %}
+		<div class="bgcontent">
+			<div class="align">
+				<center>
+					<footer>
+						<div class="row1">
+							<h3 class="bt">Recomanded</h3>
+							<a href="">Anime Quotes</a><br><br>
+							<a href="">Anime memes</a><br><br>
+							<a href="">Best Animes</a><br><br>
+							<a href="">long serious anime</a><br><br>
+						</div>
+						<div class="row2">
+							<h3 class="bt">Navigation</h3>
+							<a href="/">Home</a><br><br>
+							<a href="">About us</a><br><br>
+							{% if user.is_authenticated%}
+					<a href="accounts/logout">Logout</a>
+				{% else %}
+				<a href="accounts/signin">LogIn</a>
+				<a href="accounts/register">Register</a>
+				{% endif %}
+						</div>
+						<div class="row3">
+							<h3 class="bt">Contact us</h3>
+							<div class="fb">
+								<img src="{% static 'Image/facebook.png' %}"width="30px" height="30px">
+								facebook
+							</div>
+							<div class="yt">
+								<img src="{% static 'Image/youtube.png' %}"width="30px" height="30px">
+								youtube
+							</div>
+							<div class="tg">
+								<img src="{% static 'Image/telegram.png' %}" width="30px" height="30px">
+								@hunt10anime
+							</div>
+						</div>
+					</footer>
+					<hr>
+					<h3 class="bottomtext">&copy 2020|2013 Developed by Natnale </h3>
+				</center>
+			</div>
+		</div>		
+	</div>
+	<script>
+		let a = 0;
+			function count() {
+				a += 1;
+				document.querySelector('p').innerHTML = a
+			}
+	</script>
+</body>
+</html>
+
+{% endblock %}
